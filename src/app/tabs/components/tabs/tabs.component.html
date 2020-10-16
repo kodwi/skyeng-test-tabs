@@ -1,5 +1,5 @@
 <div class="tabs__titles">
-  <div (click)="activeTab = tab" *ngFor="let tab of tabs" [ngClass]="{'tabs__title--active': tab === activeTab}"
+  <div (click)="setActiveTab(tab)" *ngFor="let tab of tabs" [ngClass]="{'tabs__title--active': tab === activeTab}"
        class="tabs__title">
     <ng-template *ngTemplateOutlet="tab.title.template"></ng-template>
   </div>
