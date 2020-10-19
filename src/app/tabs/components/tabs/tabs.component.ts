@@ -1,6 +1,6 @@
 import {AfterContentInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ContentChildren, QueryList} from '@angular/core';
 import {TabComponent} from '../tab/tab.component';
-import {BaseComponent} from '../../../shared/base-component';
+import {Unsubscribable} from '../../../shared/unsubscribable';
 import {takeUntil} from 'rxjs/operators';
 
 @Component({
@@ -9,7 +9,7 @@ import {takeUntil} from 'rxjs/operators';
   styleUrls: ['./tabs.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class TabsComponent extends BaseComponent implements AfterContentInit {
+export class TabsComponent extends Unsubscribable implements AfterContentInit {
   @ContentChildren(TabComponent) tabs: QueryList<TabComponent>;
 
   activeTab: TabComponent;
